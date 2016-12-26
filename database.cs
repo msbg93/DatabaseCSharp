@@ -34,6 +34,7 @@ public class database
         adapter.SelectCommand = new SqlCommand(query, Connection.GetConnection());
         adapter.Fill(dt);
        // con.Close();
+	Connection.conn.Close();
         return dt;
            }
         catch (Exception)
@@ -52,6 +53,7 @@ public class database
         SqlCommand cmd = new SqlCommand(query, Connection.GetConnection());
         cmd.CommandTimeout = 50000000;
         cmd.ExecuteNonQuery();
+	Connection.conn.Close();
          }
         catch (Exception)
         {
